@@ -4,11 +4,7 @@ import About from './components/About';
 import Gallery from './components/Gallery';
 import ContactForm from './components/Contact';
 
-
 function App() {
-  // prevent the contact form from showing when a user initially navigates to the homepage
-  const [contactSelected, setContactSelected] = useState(false);
-
   const [categories] = useState([
     {
       name: 'commercial',
@@ -20,6 +16,8 @@ function App() {
   ]);
 
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
+
+  const [contactSelected, setContactSelected] = useState(false);
 
   return (
     <div>
@@ -37,9 +35,8 @@ function App() {
             <About></About>
           </>
         ) : (
-          <ContactForm></ContactForm>
-        )}
-
+            <ContactForm></ContactForm>
+          )}
       </main>
     </div>
   );
